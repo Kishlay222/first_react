@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-function FunctionalComponent() {
+function FunctionalComponent(props) {
   const [count, setCount] = useState(0);
+  const [changeName, setChangeName] = useState("");
 
   return (
     <div>
@@ -23,6 +24,11 @@ function FunctionalComponent() {
         Reset
       </button>
       <h1>{count}</h1>
+      <h1>
+        This is {props.name} age {props.age} works at {props.company}
+      </h1>
+      <input onChange={(e) => setChangeName(e.target.value)} />
+      <button onClick={() => props.setName(changeName)}>Change Name</button>
     </div>
   );
 }
