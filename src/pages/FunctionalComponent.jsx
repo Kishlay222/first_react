@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import BaseHoc from "../hoc/BaseHoc";
 
 function FunctionalComponent(props) {
   const [count, setCount] = useState(0);
@@ -33,4 +34,4 @@ function FunctionalComponent(props) {
   );
 }
 
-export default FunctionalComponent;
+export default BaseHoc(FunctionalComponent);
